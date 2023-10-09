@@ -1,0 +1,109 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Subscription Form</title>
+  <link rel="stylesheet" href="{% static 'css/form.css'%}">
+</head>
+<body>
+    <div class="container">
+        <div class="box form-box">
+            <header>Add subscriber </header>
+            <form method="post" enctype="multipart/form-data" action="{% url 'add_subscriber' %}">
+              {% csrf_token %}
+                <div class="field input">
+                    <i class="icon far fa-user"></i>username
+                    <input type="text" name="name" id="username" autocomplete="off" required>
+                </div>
+                <div class="field input">
+                    <i class="icon fas fa-phone"></i>phone number
+                    <input type="number"  name="phone_number"autocomplete="off" required>
+                </div>
+                <div class="field">
+                  <label for="gender">Gender</label>
+                  <select class="form-control" id="gender" name="gender">
+                    <option value="male" name="male">Male</option>
+                    <option value="female" name="female">Female</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="money">Salaire</label>
+                  <input type="number" class="form-control" id="money" name="salary">
+                </div>
+                <div class="field">
+                  <label for="number_of_months">Number of Months</label>
+                  <input type="number" class="form-control" id="number_of_months" name="how_many_month">
+                </div>
+                <div class="field">
+                  <label for="date_of_subscribe">Date of Subscribe</label>
+                  <input type="date" class="form-control" id="date_of_subscribe" name="subscription_date" oninput="highlightInput(this)">
+                </div>
+                <div class="field input">
+                  <i class="icon far fa-image"></i>Image
+                  <input type="file" name="image" required>
+              </div>
+                <div class="field">
+                    <input type="submit" class="btn" name="add_subscriber" value="Register" required>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+
+
+
+
+  
+</body>
+</html>
+
+
+
+
+
+<!-- <div class="container">
+    <h1>Subscription Form</h1>
+    <form action="index.php" method="post">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" oninput="highlightInput(this)">
+      </div>
+      <div class="form-group">
+        <label for="date_of_subscribe">Date of Subscribe</label>
+        <input type="date" class="form-control" id="date_of_subscribe" name="date_of_subscribe" oninput="highlightInput(this)">
+      </div>
+      <div class="form-group">
+        <label for="number_of_months">Number of Months</label>
+        <input type="number" class="form-control" id="number_of_months" name="number_of_months">
+      </div>
+      <div class="form-group">
+        <label for="money">Money</label>
+        <input type="number" class="form-control" id="money" name="money">
+      </div>
+      <div class="form-group">
+        <label for="image">Upload Image</label>
+        <input type="file" class="form-control-file" id="image" name="image">
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="role">Role</label>
+        <select class="form-control" id="role" name="role">
+          <option value="admin">Admin</option>
+          <option value="subscriber">Subscriber</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="gmail">Gmail (Admin only)</label>
+        <input type="email" class="form-control" id="gmail" name="gmail" disabled>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div> -->

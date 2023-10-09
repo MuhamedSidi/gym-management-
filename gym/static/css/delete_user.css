@@ -1,0 +1,9 @@
+body {
+    font-family: 'Varela Round', sans-serif;
+}
+
+/* Your modal styles here */
+
+.trigger-btn {
+    display: none; /* Hide the trigger button initially */
+}

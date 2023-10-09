@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/create -admin.css'%}">
+<title>Admin Add Page</title>
+</head>
+<body>
+  <div class="container">
+    <div class="container">
+        <div class="box form-box">
+            <header>Create Admin</header>
+            <form method="post" enctype="multipart/form-data" action="{% url 'register_admin' %}">
+                {% csrf_token %}
+            <div class="field input">
+                    <i class="icon far fa-user"></i>username
+                    <input type="text" name="username" id="username" autocomplete="off" required>
+                </div>
+
+              
+                <div class="field input">
+                    <i class='bx bxl-gmail'></i>gmail
+                    <input type="gmail"  autocomplete="off" name="gmail" id="gmail" required>
+                </div>
+                <div class="field input">
+                    <i class="icon fas fa-lock"></i>password
+                    <input type="password" name="password1" id="password1" required>
+                </div>
+                <div class="field input">
+                    <i class="icon fas fa-lock"></i>password
+                    <input type="password" name="password2" id="password2" required>
+                </div>
+              
+                <div class="field">
+                    <button type="submit" class="btn" name="register_admin" value="Register" required>Register</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="password-requirements" style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);">
+            <h2 style="font-size: 18px; margin-bottom: 10px;">متطلبات كلمة المرور</h2>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="font-size: 16px; line-height: 1.4; margin-bottom: 10px;"><span style="color: #007bff; font-size: 18px; margin-right: 5px;">&bull;</span> لا يمكن أن تكون كلمة المرور الخاصة بك مشابهة جدًا لمعلوماتك الشخصية الأخرى</li>
+                <li style="font-size: 16px; line-height: 1.4; margin-bottom: 10px;"><span style="color: #007bff; font-size: 18px; margin-right: 5px;">&bull;</span> يجب أن تحتوي كلمة المرور الخاصة بك على 8 أحرف على الأقل.</li>
+                <li style="font-size: 16px; line-height: 1.4; margin-bottom: 10px;"><span style="color: #007bff; font-size: 18px; margin-right: 5px;">&bull;</span>لا يمكن أن تكون كلمة المرور الخاصة بك كلمة مرور شائعة الاستخدام.</li>
+                <li style="font-size: 16px; line-height: 1.4;"><span style="color: #007bff; font-size: 18px; margin-right: 5px;">&bull;</span> لا يمكن أن تكون كلمة المرور رقمية بالكامل.</li>
+            </ul>
+        </div>
+        
+        
+    </div>
+  </div>  
+ 
+
+ 
+
+</body>
+</html>
+  {% comment %} <div class="field input">
+                    <i class="icon fas fa-lock"></i>confirm password
+                    <input type="password" name="password2" id="password" required>
+                </div> {% endcomment %}  {% comment %} <div class="field input">
+                    <i class="icon far fa-image"></i>Image
+                    <input type="file" name="image" accept="image/*" required>
+                </div>  {% endcomment %}

@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+    <title>User Table</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Subscriber Search Results</h2>
+        <form method="get">
+            {{ form.as_p }}
+        </form>
+        {% if subscribers %}
+        {% for subscriber in subscribers %}
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="profile-image">
+                            <img src="{{ subscriber.image.url }}" alt="{{ subscriber.name }}" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <strong>Name:</strong> {{ subscriber.name }}<br>
+                        <strong>ID:</strong> {{ subscriber.id }}<br>
+                        <strong>Subscription Expired:</strong> {{ subscriber.expired_date }}<br>
+                        <strong>Number of Months:</strong> {{ subscriber.how_many_month }}<br>
+                        <strong>Salary:</strong> {{ subscriber.salary }}<br>
+                        <strong>Phone Number:</strong> {{ subscriber.phone_number }}<br>
+                        <strong>Date of Subscription:</strong> {{ subscriber.subscription_date }}<br>
+                        <!-- Add other subscriber fields as needed -->
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-9"></div>
+                    <div class="col-md-3 text-right">
+                        <button type="submit" class="btn btn-success">
+                            <a href="{% url 'update_subscriber' subscriber.id %}" class="text-white">Edit ✏️</a>
+                        </button>
+                        <button type="submit" class="btn btn-danger">
+                            <a href="{% url 'delete_subscriber' subscriber.id %}" class="text-white">Delete 🗑️</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        {% empty %}
+            <p>No subscribers found.</p>
+        {% endfor %}
+        {% else %}
+            <p>لم يتم العثور على المشترك</p>
+        {% endif %}
+    </div>
+</body>
+</html>

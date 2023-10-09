@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/table.css'%}">
+    <title>User Table</title>
+</head>
+<body>
+  <form method="get" action="{%url 'search_subscribers' %}">
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">User Table</h1>
+        <div class="input-group mb-3">
+          <input type="search" name="name" id="searchInput"  class="form-control" placeholder="ادخل اسم المشترك">
+          <button type="submit" class="btn btn-primary">ابحث</button>
+      </div>
+    </form>
+      <form method="post" action="">
+        <table class="table table-bordered table-striped " id="userTable">          <thead>
+              <tr>
+                <th>Image</th>
+                  <th>Id</th>
+                  <th> Username</th>
+                  <th>Phone Number</th>
+                  <th>Subscription Date</th>
+                  <th>Salary</th>
+                  <th>Months</th>
+                  <th>Expired Date</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for subscriber in posts %}
+                  <tr>
+                    <td>
+                      <div class="profile-image">
+                          <img src="{{  subscriber.image.url }}" alt="{{  subscriber.name }}">
+                      </div>
+                  </td>
+                    <td>{{  subscriber.id }}</td>
+                      <td>{{  subscriber.name }}</td>
+                      <td>{{  subscriber.phone_number }}</td>
+                      <td>{{  subscriber.subscription_date }}</td>
+                      <td>{{  subscriber.salary }}</td>
+                      <td>{{  subscriber.how_many_month }}</td>
+                      <td>{{  subscriber.expired_date }}</td>
+                      <td>
+                        <div class="subscription-status">
+                            <button class="btn {% if subscriber.is_subscription_expired %}btn-danger{% else %}btn-success{% endif %}">
+                              {% if subscriber.is_subscription_expired %} اشتراك منته{% else %}نشط{% endif %}
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                      {% csrf_token %}
+                      <a href="{% url 'update_subscriber' subscriber.id %}" class="btn btn-success edit-button">
+                        <i class="bi bi-pencil-fill"></i>✏️
+                      </a>
+                      <a href="{% url 'delete_subscriber' subscriber.id %}" class="btn btn-danger delete-button">
+                        <i class="bi bi-trash-fill"></i> 🗑️
+                      </a>
+                    </td>
+                  </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+  </div>
+
+</form>
+  <script src="{% static 'js/table.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   {% comment %} <table>
+        <thead>
+          <tr>
+            <th>Username <span class="icon-arrow">&UpArrow;</span></th>
+            <th>Image <span class="icon-arrow">&UpArrow;</span></th>
+            <th>Date du abonnement <span class="icon-arrow">&UpArrow;</span></th>
+            <th>Phone <span class="icon-arrow">&UpArrow;</span></th>
+            <th>Amount <span class="icon-arrow">&UpArrow;</span></th>
+            <th>Date du abonnement <span class="icon-arrow">&UpArrow;</span></th>
+            <th>Nombre du mois <span class="icon-arrow">&UpArrow;</span></th>
+            <th>Action <span class="icon-arrow">&UpArrow;</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for subscM in Male_list %}
+            <tr>
+              <td colspan="10">{{ subscM.name }}</td>
+              <td><img src="{{ subscM.image.url }}"></td>
+              <td colspan="10">{{ subscM.phone_number }}</td>
+              <td colspan="10">{{ subscM.subscription_date }}</td>
+              <td colspan="10">{{ subscM.salary }}</td>
+              <td colspan="10">{{ subscM.how_many_month }}</td>
+              <td colspan="10">{{ subscM.expired_date }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </main> {% endcomment %}

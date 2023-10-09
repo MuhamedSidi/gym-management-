@@ -1,0 +1,81 @@
+html{margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+    }
+   
+    body{
+        /* background: url("{% static 'images/b-log.jpg' %}"); */
+        background-image: url("/static/images/b-log.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;  
+    }
+    .login-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* This is the new line of code */
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    }
+    
+    .login-box {
+    max-width: 300px;
+    }
+    
+    .input-container {
+    position: relative;
+    margin-bottom: 20px;
+    }
+    
+    .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3498db;
+    }
+    
+    input {
+    width: 100%;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    }
+    
+    button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    }
+    
+    .forgot-password {
+    margin-top: 15px;
+    }
+    
+    .forgot-password a {
+    color: white;
+    text-decoration: none;
+    }
+    
+    .forgot-password a:hover {
+    text-decoration: underline;
+    }
+     
