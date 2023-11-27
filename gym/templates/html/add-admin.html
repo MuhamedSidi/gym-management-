@@ -13,11 +13,11 @@
   <div class="container">
     <div class="container">
         <div class="box form-box">
-            <header>Create Admin</header>
+            <header>إنشاء المشرف</header>
             <form method="post" enctype="multipart/form-data" action="{% url 'register_admin' %}">
                 {% csrf_token %}
             <div class="field input">
-                    <i class="icon far fa-user"></i>username
+                    <i class="icon far fa-user"></i>اسم المشرف
                     <input type="text" name="username" id="username" autocomplete="off" required>
                 </div>
 
@@ -27,16 +27,16 @@
                     <input type="gmail"  autocomplete="off" name="gmail" id="gmail" required>
                 </div>
                 <div class="field input">
-                    <i class="icon fas fa-lock"></i>password
+                    <i class="icon fas fa-lock"></i>كلمة المرور
                     <input type="password" name="password1" id="password1" required>
                 </div>
                 <div class="field input">
-                    <i class="icon fas fa-lock"></i>password
+                    <i class="icon fas fa-lock"></i>كلمة المرور
                     <input type="password" name="password2" id="password2" required>
                 </div>
               
                 <div class="field">
-                    <button type="submit" class="btn" name="register_admin" value="Register" required>Register</button>
+                    <button type="submit" class="btn" name="register_admin" value="Register" required>تسجيل</button>
                 </div>
             </form>
         </div>
