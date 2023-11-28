@@ -12,25 +12,24 @@
 <body>
   <form method="get" action="{%url 'search_subscribers' %}">
     <div class="container mt-4">
-        <h1 class="text-center mb-4">User Table</h1>
+        <h1 class="text-center mb-4">قسم الرجال</h1>
         <div class="input-group mb-3">
           <input type="search" name="name" id="searchInput"  class="form-control" placeholder="ادخل اسم المشترك">
-          <button type="submit" class="btn btn-primary">ابحث</button>
+          <button type="submit" class="btn btn-primary">بحث</button>
       </div>
     </form>
       <form method="post" action="">
         <table class="table table-bordered table-striped " id="userTable">          <thead>
               <tr>
-                <th>Image</th>
-                  <th>Id</th>
-                  <th> Username</th>
-                  <th>Phone Number</th>
-                  <th>Subscription Date</th>
-                  <th>Salary</th>
-                  <th>Months</th>
-                  <th>Expired Date</th>
-                  <th>Status </th>
-                  <th>Actions</th>
+                <th>صورة</th>
+                <th> اسم المشترك</th>
+                <th>رقم الهاتف</th>
+                <th> تاريخ الاشتراك </th>
+                <th>المبلغ</th>
+                <th>عدد الأشهر</th>
+                <th>تاريخ انتهاء الاشتراك</th>
+                <th>الحالة</th>
+                <th>الإجراءات</th>
               </tr>
           </thead>
           <tbody>
@@ -41,7 +40,7 @@
                           <img src="{{  subscriber.image.url }}" alt="{{  subscriber.name }}">
                       </div>
                   </td>
-                    <td>{{  subscriber.id }}</td>
+                
                       <td>{{  subscriber.name }}</td>
                       <td>{{  subscriber.phone_number }}</td>
                       <td>{{  subscriber.subscription_date }}</td>
