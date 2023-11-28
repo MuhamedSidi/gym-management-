@@ -18,7 +18,7 @@
         <div class="d-flex justify-content-center h-100">
             <div class="user_card">
                 <div class="d-flex justify-content-center">
-                    <h3 id="form-title">Upadte subscriber</h3>
+                    <h3 id="form-title">تحديث المشترك</h3>
                 </div>
                 <div class="d-flex justify-content-center form_container">
 
@@ -28,19 +28,19 @@
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" name="name" value="{{  subscriber.name }} " placeholder="Username..">
+                            <input type="text" name="name" value="{{  subscriber.name }} " placeholder="...اسم المشترك                           ">
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-phone"></i></span>
                             </div>
-                            <input type="text" name="phone_number" value="{{  subscriber.phone_number }}" placeholder="Phone Number..">
+                            <input type="text" name="phone_number" value="{{  subscriber.phone_number }}" placeholder="...رقم الهاتف">
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-euro-sign"></i></span>
                             </div>
-                            <input type="text" name="salary" value="{{  subscriber.salary }}" placeholder="Salaire..">
+                            <input type="text" name="salary" value="{{  subscriber.salary }}" placeholder=" ...المبلغ">
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
@@ -52,25 +52,25 @@
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                             </div>
-                            <input type="date" value="{{  subscriber.subscription_date }}" name="subscription_date">
+                            <input type="date" value="{{  subscriber.subscription_date }}" name="subscription_date" >
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <label class="input-group-text" for="gender"><i class="fas fa-venus-mars"></i></label>
                             </div>
                             <select id="gender" name="gender" value="{{ subscriber.gender}}">
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
+                                <option value="male">ذكر</option>
+                                <option value="female">أنثى</option>
                             </select>
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                             </div>
-                            <input type="number" name="how_many_month" value="{{  subscriber.how_many_month }}" placeholder="Number of Months">
+                            <input type="number" name="how_many_month" value="{{  subscriber.how_many_month }}" placeholder="عدد الأشهر">
                         </div>
                         <div class="d-flex justify-content-center mt-3 login_container">
-                            <button class="btn login_btn" type="submit" name="update_subscriber">Upadte </button>
+                            <button class="btn login_btn" type="submit" name="update_subscriber">تحديث </button>
                         </div>
                     </form>
                 </div>
@@ -90,10 +90,10 @@
 
 //Query All input fields
 var form_fields = document.getElementsByTagName('input')
-form_fields[1].placeholder='Username..';
-form_fields[2].placeholder='phone_number';
-form_fields[3].placeholder='Salair..';
-form_fields[4].placeholder='Salair..';
+form_fields[1].placeholder='اسم المشترك';
+form_fields[2].placeholder='رقم التليفون';
+form_fields[3].placeholder='المبلغ..';
+form_fields[4].placeholder='المبلغ..';
 
 
 for (var field in form_fields){	

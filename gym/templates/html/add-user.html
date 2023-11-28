@@ -10,42 +10,42 @@
 <body>
     <div class="container">
         <div class="box form-box">
-            <header>Add subscriber </header>
+            <header>إضافة مشترك </header>
             <form method="post" enctype="multipart/form-data" action="{% url 'add_subscriber' %}">
               {% csrf_token %}
                 <div class="field input">
-                    <i class="icon far fa-user"></i>username
+                    <i class="icon far fa-user"></i>اسم المشترك
                     <input type="text" name="name" id="username" autocomplete="off" required>
                 </div>
                 <div class="field input">
-                    <i class="icon fas fa-phone"></i>phone number
+                    <i class="icon fas fa-phone"></i>رقم الهاتف
                     <input type="number"  name="phone_number"autocomplete="off" required>
                 </div>
                 <div class="field">
-                  <label for="gender">Gender</label>
+                  <label for="gender">جنس</label>
                   <select class="form-control" id="gender" name="gender">
-                    <option value="male" name="male">Male</option>
-                    <option value="female" name="female">Female</option>
+                    <option value="male" name="male">ذكر</option>
+                    <option value="female" name="female">أنثى</option>
                   </select>
                 </div>
                 <div class="field">
-                  <label for="money">Salaire</label>
+                  <label for="money">تكلفة الاشتراك</label>
                   <input type="number" class="form-control" id="money" name="salary">
                 </div>
                 <div class="field">
-                  <label for="number_of_months">Number of Months</label>
+                  <label for="number_of_months">عدد الأشهر</label>
                   <input type="number" class="form-control" id="number_of_months" name="how_many_month">
                 </div>
                 <div class="field">
-                  <label for="date_of_subscribe">Date of Subscribe</label>
+                  <label for="date_of_subscribe">تاريخ الاشتراك</label>
                   <input type="date" class="form-control" id="date_of_subscribe" name="subscription_date" oninput="highlightInput(this)">
                 </div>
                 <div class="field input">
-                  <i class="icon far fa-image"></i>Image
+                  <i class="icon far fa-image"></i>صورة المشترك
                   <input type="file" name="image" required>
               </div>
                 <div class="field">
-                    <input type="submit" class="btn" name="add_subscriber" value="Register" required>
+                    <input type="submit" class="btn" name="add_subscriber" value="حفظ" required>
                 </div>
             </form>
         </div>

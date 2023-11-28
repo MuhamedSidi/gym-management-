@@ -23,27 +23,27 @@
 	<section id="sidebar">
 		<a href="#" class="brand">
 			<i class='bx bxs-smile'></i>
-			<span class="text">AdminHub</span>
+			<span class="text"> Gym Gaza</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
 				<a href= "{%url 'home'%}">
 					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
+					<span class="text">لوحة الادارة</span>
 				</a> </li>
 				<br>
 				
 			<li>
 				<a href= "{%url 'list_Man'%}">
 					<i class='bx bx-male' ></i>
-					<span class="text">Man table</span>
+					<span class="text">قسم الرجال</span>
 				</a>
 			</li>
 			<br>
 			<li>
 				<a href= "{%url 'list_Female'%}">
 					<i class='bx bx-female' ></i>
-					<span class="text">Female table</span>
+					<span class="text">قسم الإناث</span>
 				</a>
 			</li>
 			<br>
@@ -51,7 +51,7 @@
 				
 				<a href= "{%url 'addu'%}">
 					<i class='bx bx-user-plus' ></i>
-					<span class="text">Add user </span>
+					<span class="text">إضافة مشترك</span>
 				</a>
 			</li>
 			<br>
@@ -60,7 +60,7 @@
 			<li>
 				<a href="{%url 'adda' %}">
 					<i class='bx bxs-user-plus'></i>
-					<span class="text">Add admin</span>
+					<span class="text">    إضافة مشرف</span>
 				</a>
 			</li>
 			<br>
@@ -68,7 +68,7 @@
 			<li>
 				<a href="{%url 'user_list' %}">
 					<i class='fas fa-user-cog'></i>
-					<span class="text">Admin</span>
+					<span class="text">المشرفون</span>
 				</a>
 			</li>
 		</ul>
@@ -82,7 +82,7 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
-			<a href="#" class="nav-link">Categories</a>
+			<a href="#" class="nav-link">الإحصائيات</a>
 			<form action="#">
 				<div class="form-input">
 					<input type="search" placeholder="Search...">
@@ -103,14 +103,14 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<h1> Gym Gaza</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Dashboard</a>
+							<a href="#">لوحة الادارة</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active" href="#">الإحصائيات</a>
 						</li>
 					</ul>
 				</div>
@@ -118,7 +118,7 @@
 			     <a href="{% url 'generate_pdf' %}" class="btn-download">
 					
 					<i class='bx bxs-cloud-download' ></i>
-					<span class="text">Download PDF</span>
+					<span class="text">تحميل كملف PDF</span>
 				</a>
 			</div>
 		
@@ -128,21 +128,21 @@
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">
 						<h3>{{expired_subscribers_count}}</h3>
-						<p>Expired</p>
+						<p>منته الاشتراك</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-group' ></i>
 					<span class="text">
 						<h3>{{ total_subscribers }}</h3>
-						<p>user nombre </p>
+						<p>عدد المشتركين</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
 						<h3>${{total_salary}}</h3>
-						<p>Total d'argent</p>
+						<p>المبلغ الإجمالي</p>
 					</span>
 				</li>
 			</ul>
@@ -156,7 +156,7 @@
 
 		
 		</section>
-	
+{% comment %} 	
 
 			 <div class="table-data">
 				<div class="order">
@@ -215,7 +215,7 @@
 								<td><span class="status completed">Completed</span></td>
 							</tr> 
 						</tbody>
-					</table> 
+					</table>  {% endcomment %}
 		<!-- MAIN -->
 
 	<script src="{%static 'js/script.js'%}"></script>

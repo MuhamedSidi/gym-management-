@@ -439,17 +439,21 @@ def add_subscriber(request):
 #save admin
 
 
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
 def register_admin(request):
     if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
-                form.save()
-                return render(request,'html/login.html')
-            
-            # Redirect to a success page or home page
+            form.save()
+            # Redirect to the login page after successful registration
+            return redirect('login')  # Replace 'login' with the actual URL name for your login page
     else:
-        form = UserRegistrationForm()
+        form = UserCreationForm()
     return render(request, 'html/add-admin.html', {'form': form})
+
 
 #home page 
 def home(request):

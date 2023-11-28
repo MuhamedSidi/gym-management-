@@ -11,7 +11,8 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h2>Subscriber Search Results</h2>
+        <h2> نتيجة البحث
+        </h2> <br>
         <form method="get">
             {{ form.as_p }}
         </form>
@@ -26,13 +27,12 @@
                         </div>
                     </div>
                     <div class="col-md-9">
-                        <strong>Name:</strong> {{ subscriber.name }}<br>
-                        <strong>ID:</strong> {{ subscriber.id }}<br>
-                        <strong>Subscription Expired:</strong> {{ subscriber.expired_date }}<br>
-                        <strong>Number of Months:</strong> {{ subscriber.how_many_month }}<br>
-                        <strong>Salary:</strong> {{ subscriber.salary }}<br>
-                        <strong>Phone Number:</strong> {{ subscriber.phone_number }}<br>
-                        <strong>Date of Subscription:</strong> {{ subscriber.subscription_date }}<br>
+                        {{ subscriber.name }}  <strong> : الاسم</strong><br>
+                       {{ subscriber.expired_date }}  <strong>   : تاريخ انتهاء الاشتراك </strong> <br>
+                        <strong>عدد الأشهر:</strong> {{ subscriber.how_many_month }}<br>
+                         {{ subscriber.salary }}  <strong>        : دفع</strong><br>
+                        <strong>رقم الهاتف:</strong> {{ subscriber.phone_number }}<br>
+                         {{ subscriber.subscription_date }}  <strong>  : تاريخ الاشتراك</strong> <br>
                         <!-- Add other subscriber fields as needed -->
                     </div>
                 </div>
@@ -40,10 +40,10 @@
                     <div class="col-md-9"></div>
                     <div class="col-md-3 text-right">
                         <button type="submit" class="btn btn-success">
-                            <a href="{% url 'update_subscriber' subscriber.id %}" class="text-white">Edit ✏️</a>
+                            <a href="{% url 'update_subscriber' subscriber.id %}" class="text-white">تعديل ✏️</a>
                         </button>
                         <button type="submit" class="btn btn-danger">
-                            <a href="{% url 'delete_subscriber' subscriber.id %}" class="text-white">Delete 🗑️</a>
+                            <a href="{% url 'delete_subscriber' subscriber.id %}" class="text-white">حذف 🗑️</a>
                         </button>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
         </div>
         <hr>
         {% empty %}
-            <p>No subscribers found.</p>
+          
         {% endfor %}
         {% else %}
             <p>لم يتم العثور على المشترك</p>
